@@ -56,7 +56,7 @@ module.exports = class treeStructureController {
         } catch (error) {
             return res.status(500).json({
                 status: false,
-                message: error.message,
+                message: "Private data is only visible to the owner",
             })
         }
     }

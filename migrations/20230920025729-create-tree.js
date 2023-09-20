@@ -19,10 +19,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       parent_id: {
-        type: Sequelize.INTEGER
-      },
-      tree_structure_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: true,
       },
       createdAt: {
         allowNull: false,

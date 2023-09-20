@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Tree.hasMany(models.Tree, { as: "parent", foreignKey: "parent_id" })
     }
   }
   Tree.init({
@@ -18,7 +18,6 @@ module.exports = (sequelize, DataTypes) => {
     desc_1: DataTypes.STRING,
     desc_2: DataTypes.STRING,
     parent_id: DataTypes.INTEGER,
-    tree_structure_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Tree',
