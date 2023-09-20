@@ -2,20 +2,26 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('tree_structures', {
+    await queryInterface.createTable('Trees', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      tree_name: {
+      name: {
         type: Sequelize.STRING
       },
-      is_private: {
-        type: Sequelize.BOOLEAN
+      desc_1: {
+        type: Sequelize.STRING
       },
-      user_id: {
+      desc_2: {
+        type: Sequelize.STRING
+      },
+      parent_id: {
+        type: Sequelize.INTEGER
+      },
+      tree_structure_id: {
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -29,6 +35,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('tree_structures');
+    await queryInterface.dropTable('Trees');
   }
 };
